@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: "https://edgar664.github.io",
-  base: "/SNZ",
+  integrations: [tailwind()],
 });
