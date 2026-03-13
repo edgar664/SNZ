@@ -37,7 +37,7 @@ const fruits = [
 
 		<!-- HERO -->
 		<section
-			class="relative h-[90vh] flex items-center justify-center text-center text-white overflow-hidden"
+			class="relative h-[85vh] flex items-center justify-center text-center text-white overflow-hidden"
 		>
 			<!-- IMAGENES -->
 			<div class="absolute inset-0">
@@ -73,27 +73,26 @@ const fruits = [
 					Frutas frescas cultivadas con procesos naturales y
 					sostenibles. Calidad del campo directamente a tu negocio.
 				</p>
-
-				<a
-					href="/productos"
-					class="bg-green-60 <section>
-			
-		</section>0 hover:bg-green-700 transition px-8 py-4 rounded-xl text-lg font-semibold shadow-xl"
-				>
-					Ver Productos
-				</a>
 			</div>
 		</section>
 
-		<section class="bg-green-50 border-y border-green-100 py-2">
+		<section class="relative py-2 bg-gradient-to-b from-green-50 to-white">
 			<div class="max-w-6xl mx-auto px-6">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 					<!-- Kosher -->
 					<div
-						class="flex items-center gap-4 bg-white rounded-xl px-6 py-4 shadow-sm hover:shadow-md transition"
+						class="flex items-center gap-4 rounded-2xl px-6 py-5
+				bg-white/40 backdrop-blur-xl
+				border border-white/40
+				shadow-lg shadow-green-100/40
+				hover:bg-white/60 hover:shadow-xl
+				transition-all duration-300"
 					>
 						<div
-							class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white font-bold"
+							class="w-11 h-11 flex items-center justify-center
+					rounded-full bg-gradient-to-br
+					from-green-400 to-green-600
+					text-white font-bold shadow-md"
 						>
 							✓
 						</div>
@@ -111,10 +110,18 @@ const fruits = [
 
 					<!-- Primus -->
 					<div
-						class="flex items-center gap-4 bg-white rounded-xl px-6 py-4 shadow-sm hover:shadow-md transition"
+						class="flex items-center gap-4 rounded-2xl px-6 py-5
+				bg-white/40 backdrop-blur-xl
+				border border-white/40
+				shadow-lg shadow-green-100/40
+				hover:bg-white/60 hover:shadow-xl
+				transition-all duration-300"
 					>
 						<div
-							class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white font-bold"
+							class="w-11 h-11 flex items-center justify-center
+					rounded-full bg-gradient-to-br
+					from-green-400 to-green-600
+					text-white font-bold shadow-md"
 						>
 							✓
 						</div>
@@ -133,45 +140,6 @@ const fruits = [
 			</div>
 		</section>
 
-		<style>
-			/* zoom suave */
-			.hero-img {
-				animation: heroZoom 30s ease-in-out infinite alternate;
-			}
-
-			/* fade slider */
-			.hero-slide {
-				opacity: 0;
-				transition: opacity 2s ease;
-			}
-
-			.hero-slide.active {
-				opacity: 1;
-			}
-
-			/* zoom animation */
-			@keyframes heroZoom {
-				0% {
-					transform: scale(1);
-				}
-				100% {
-					transform: scale(1.15);
-				}
-			}
-		</style>
-
-		<script>
-			const slides = document.querySelectorAll(".hero-slide");
-			let index = 0;
-
-			setInterval(() => {
-				slides[index].classList.remove("active");
-
-				index = (index + 1) % slides.length;
-
-				slides[index].classList.add("active");
-			}, 7000);
-		</script>
 
 		<!-- FRUTAS / PRODUCTOS -->
 		<section class="py-28 px-6 bg-gradient-to-b from-white to-green-50">
@@ -428,3 +396,42 @@ const fruits = [
 		<Footer />
 	</body>
 </html>
+		<style>
+			/* zoom suave */
+			.hero-img {
+				animation: heroZoom 30s ease-in-out infinite alternate;
+			}
+
+			/* fade slider */
+			.hero-slide {
+				opacity: 0;
+				transition: opacity 2s ease;
+			}
+
+			.hero-slide.active {
+				opacity: 1;
+			}
+
+			/* zoom animation */
+			@keyframes heroZoom {
+				0% {
+					transform: scale(1);
+				}
+				100% {
+					transform: scale(1.15);
+				}
+			}
+		</style>
+
+		<script>
+			const slides = document.querySelectorAll(".hero-slide");
+			let index = 0;
+
+			setInterval(() => {
+				slides[index].classList.remove("active");
+
+				index = (index + 1) % slides.length;
+
+				slides[index].classList.add("active");
+			}, 7000);
+		</script>
