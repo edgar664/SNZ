@@ -150,7 +150,7 @@ const fruits = [
 
 		</div>
 	</div>
-</section>
+		</section>
 
 		<!-- FRUTAS / PRODUCTOS -->
 		<section class="py-28 px-6 bg-gradient-to-b from-white to-green-50">
@@ -407,42 +407,42 @@ const fruits = [
 		<Footer />
 	</body>
 </html>
-		<style>
-			/* zoom suave */
-			.hero-img {
-				animation: heroZoom 30s ease-in-out infinite alternate;
-			}
+<style>
+	/* zoom suave */
+	.hero-img {
+		animation: heroZoom 30s ease-in-out infinite alternate;
+	}
 
-			/* fade slider */
-			.hero-slide {
-				opacity: 0;
-				transition: opacity 2s ease;
-			}
+	/* fade slider */
+	.hero-slide {
+		opacity: 0;
+		transition: opacity 2s ease;
+	}
 
-			.hero-slide.active {
-				opacity: 1;
-			}
+	.hero-slide.active {
+		opacity: 1;
+	}
 
-			/* zoom animation */
-			@keyframes heroZoom {
-				0% {
-					transform: scale(1);
-				}
-				100% {
-					transform: scale(1.15);
-				}
-			}
-		</style>
+	/* zoom animation */
+	@keyframes heroZoom {
+		0% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(1.15);
+		}
+	}
+</style>
 
-		<script>
-			const slides = document.querySelectorAll(".hero-slide");
-			let index = 0;
+<script>
+	const slides = document.querySelectorAll(".hero-slide");
+	let index = 0;
 
-			setInterval(() => {
-				slides[index].classList.remove("active");
+	setInterval(() => {
+		slides[index].classList.remove("active");
 
-				index = (index + 1) % slides.length;
+		index = (index + 1) % slides.length;
 
-				slides[index].classList.add("active");
-			}, 7000);
-		</script>
+		slides[index].classList.add("active");
+	}, 7000);
+</script>
