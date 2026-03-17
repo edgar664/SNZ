@@ -3,208 +3,291 @@ import "../../styles/global.css";
 import Navbar from "../../Components/navbar.astro";
 import Footer from "../../Components/footer.astro";
 
-const fruits = [];
+const iqfImage =
+    "https://www.pollococido.com.ar/wp-content/uploads/2019/10/3001-frambuesa-congeladas-IQF-gradoA-10x1kg-c-min.jpg";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SNZ | Frambuesa</title>
+        <link rel="icon" href="/snz.ico" />
     </head>
-    <header>
-        <Navbar />
-    </header>
+
     <body>
-        <!-- HERO -->
+        <Navbar />
+
         <section
             class="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden"
         >
-            <!-- IMAGENES -->
             <div class="absolute inset-0">
                 <img
                     src="https://www.baltana.com/files/wallpapers-5/Raspberry-HD-Desktop-Wallpaper-16909.jpg"
                     class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
                 />
-
                 <img
                     src="https://verdecora.es/blog/wp-content/uploads/2018/01/guia-para-plantar-frambuesas.jpg"
                     class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
                 />
-
                 <img
                     src="https://www.fresondepalos.es/wp-content/uploads/2024/12/fdp-181224-Blog.jpg"
                     class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
                 />
             </div>
         </section>
-    </body>
 
-    <!-- PRODUCTO -->
-    <section class="py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- TITULO -->
-            <div class="mb-20 text-center">
-                <h2
-                    class="text-4xl font-semibold tracking-tight text-gray-900 mb-6"
-                >
-                    Frambuesa IQF
-                </h2>
-
-                <p class="text-gray-500 max-w-2xl mx-auto">
-                    Producto congelado individualmente mediante tecnología IQF
-                    que preserva textura, sabor y propiedades naturales.
-                </p>
-            </div>
-
-            <!-- GRID -->
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <!-- IMAGEN -->
-                <div class="relative group">
-                    <div
-                        class="absolute -inset-6 bg-green-100/50 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition"
+        <section
+            class="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+        >
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-20">
+                    <h2
+                        id="display-title"
+                        class="text-4xl font-semibold tracking-tight text-gray-900 mb-6 transition-all duration-300"
                     >
-                    </div>
-
-                    <img
-                        src="https://www.pollococido.com.ar/wp-content/uploads/2019/10/3001-frambuesa-congeladas-IQF-gradoA-10x1kg-c-min.jpg"
-                        class="relative rounded-2xl shadow-2xl w-full object-cover"
-                    />
+                        Frambuesa IQF
+                    </h2>
+            
                 </div>
 
-                <!-- INFO -->
-                <div>
-                    <div class="flex gap-3 mb-10">
-                        <span
-                            class="px-5 py-2 bg-green-700 text-white rounded-full text-sm"
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-6 bg-green-100/50 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition"
                         >
-                            IQF
-                        </span>
-
-                        <span
-                            class="px-5 py-2 border border-green-700 text-green-700 rounded-full text-sm"
+                        </div>
+                        <div
+                            class="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-[4/3]"
                         >
-                            Puré
-                        </span>
-                    </div>
-
-                    <h3 class="text-2xl font-semibold text-green-700 mb-6">
-                        Presentación
-                    </h3>
-
-                    <div class="border-t border-gray-200 mb-8"></div>
-
-                    <div class="grid grid-cols-2 gap-6 mb-12 text-sm">
-                        <div>
-                            <p class="text-gray-400">Clasificación</p>
-                            <p class="font-semibold">Frambuesa 80/20 A°</p>
-                        </div>
-
-                        <div>
-                            <p class="text-gray-400">Temperatura</p>
-                            <p class="font-semibold">-18°C</p>
-                        </div>
-
-                        <div>
-                            <p class="text-gray-400">Proceso</p>
-                            <p class="font-semibold">IQF</p>
-                        </div>
-
-                        <div>
-                            <p class="text-gray-400">Control</p>
-                            <p class="font-semibold">Detector de metales</p>
+                            <img
+                                id="product-img"
+                                src={iqfImage}
+                                alt="Frambuesa"
+                                class="w-full h-full object-cover transition-opacity duration-500"
+                            />
                         </div>
                     </div>
 
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Producto elaborado a partir de frambuesas de las
-                        variedades Vannessa, Sumif y Erika seleccionadas en su
-                        punto óptimo de madurez.
-                    </p>
+                    <div>
+                        <div class="flex gap-3 mb-10">
+                            <button
+                                id="btn-iqf"
+                                data-type="iqf"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-green-700 text-white shadow-md"
+                            >
+                                IQF
+                            </button>
+                            <button
+                                id="btn-pure"
+                                data-type="pure"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all border border-green-700 text-green-700 hover:bg-green-50"
+                            >
+                                Puré
+                            </button>
+                        </div>
 
-                    <p class="text-gray-600 leading-relaxed">
-                        El proceso de congelación IQF permite conservar la
-                        calidad natural del fruto. Todo el producto es procesado
-                        bajo buenas prácticas de fabricación (BPM) y bajo
-                        principios HACCP.
-                    </p>
+                        <h3 class="text-2xl font-semibold text-green-700 mb-6">
+                            Presentación
+                        </h3>
+                        <div class="border-t border-gray-200 mb-8"></div>
+
+                        <div class="grid grid-cols-2 gap-6 mb-12 text-sm">
+                            <div>
+                                <p class="text-gray-400">Clasificación</p>
+                                <p
+                                    id="spec-clasificacion"
+                                    class="font-semibold"
+                                >
+                                    Frambuesa 80/20 A°
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Temperatura</p>
+                                <p class="font-semibold">-18°C</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Proceso</p>
+                                <p id="spec-proceso" class="font-semibold">
+                                    IQF
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Control</p>
+                                <p class="font-semibold">Detector de metales</p>
+                            </div>
+                        </div>
+
+                        <p
+                            id="desc-1"
+                            class="text-gray-600 leading-relaxed mb-6"
+                        >
+                            Producto elaborado a partir de frambuesas de las
+                            variedades Vannessa, Sumif y Erika seleccionadas en
+                            su punto óptimo de madurez.
+                        </p>
+                        <p id="desc-2" class="text-gray-600 leading-relaxed">
+                            El proceso de congelación IQF permite conservar la
+                            calidad natural del fruto. Todo el producto es
+                            procesado bajo buenas prácticas de fabricación (BPM)
+                            e ISO 22000.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- CALIDAD -->
+        <section class="py-2 bg-white">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <h3 class="text-3xl font-semibold mb-12">
+                    Estándares de Calidad
+                </h3>
 
-    <!-- CALIDAD -->
-    <section class="py-2 bg-white">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h3 class="text-3xl font-semibold mb-12">Estándares de Calidad</h3>
+                <div class="grid md:grid-cols-3 gap-10 text-gray-600">
+                    <div
+                        class="p-8 border rounded-2xl hover:shadow-lg transition"
+                    >
+                        <h4 class="font-semibold mb-2">BPM</h4>
+                        <p>
+                            Buenas prácticas de manufactura aplicadas en todo el
+                            proceso.
+                        </p>
+                    </div>
 
-            <div class="grid md:grid-cols-3 gap-10 text-gray-600">
-                <div class="p-8 border rounded-2xl hover:shadow-lg transition">
-                    <h4 class="font-semibold mb-2">BPM</h4>
-                    <p>
-                        Buenas prácticas de manufactura aplicadas en todo el
-                        proceso.
-                    </p>
-                </div>
+                    <div
+                        class="p-8 border rounded-2xl hover:shadow-lg transition"
+                    >
+                        <h4 class="font-semibold mb-2">HACCP</h4>
+                        <p>
+                            Control de puntos críticos para garantizar seguridad
+                            alimentaria.
+                        </p>
+                    </div>
 
-                <div class="p-8 border rounded-2xl hover:shadow-lg transition">
-                    <h4 class="font-semibold mb-2">HACCP</h4>
-                    <p>
-                        Control de puntos críticos para garantizar seguridad
-                        alimentaria.
-                    </p>
-                </div>
-
-                <div class="p-8 border rounded-2xl hover:shadow-lg transition">
-                    <h4 class="font-semibold mb-2">Exportación</h4>
-                    <p>Producto preparado para mercados internacionales.</p>
+                    <div
+                        class="p-8 border rounded-2xl hover:shadow-lg transition"
+                    >
+                        <h4 class="font-semibold mb-2">Exportación</h4>
+                        <p>Producto preparado para mercados internacionales.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer>
+        </section>
         <Footer />
-    </footer>
-
-    <style>
-        /* zoom suave */
-        .hero-img {
-            animation: heroZoom 30s ease-in-out infinite alternate;
-        }
-
-        /* fade slider */
-        .hero-slide {
-            opacity: 0;
-            transition: opacity 2s ease;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-        }
-
-        /* zoom animation */
-        @keyframes heroZoom {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.15);
-            }
-        }
-    </style>
-
-    <script>
-        const slides = document.querySelectorAll(".hero-slide");
-        let index = 0;
-
-        setInterval(() => {
-            slides[index].classList.remove("active");
-
-            index = (index + 1) % slides.length;
-
-            slides[index].classList.add("active");
-        }, 7000);
-    </script>
+    </body>
 </html>
+
+<style>
+    /* Estilos del Hero */
+    .hero-img {
+        animation: heroZoom 30s ease-in-out infinite alternate;
+    }
+    .hero-slide {
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    .hero-slide.active {
+        opacity: 1;
+    }
+    @keyframes heroZoom {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.15);
+        }
+    }
+    /* Clase de utilidad para el JS */
+    .fade-out {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    // Datos de los productos
+    const productData = {
+        iqf: {
+            title: "Frambuesa IQF",
+            subtitle:
+                "Producto congelado individualmente mediante tecnología IQF que preserva textura, sabor y propiedades naturales.",
+            img: "https://www.pollococido.com.ar/wp-content/uploads/2019/10/3001-frambuesa-congeladas-IQF-gradoA-10x1kg-c-min.jpg",
+            clasificacion: "Frambuesa 80/20 A°",
+            proceso: "IQF",
+            desc2: "El proceso de congelación IQF permite conservar la calidad natural del fruto. Todo el producto es procesado bajo buenas prácticas de fabricación (BPM) e ISO 22000.",
+        },
+        pure: {
+            title: "Puré de Frambuesa",
+            subtitle:
+                "Pulpa natural tamizada obtenida de frutos frescos seleccionados, sin semillas y lista para procesos industriales.",
+            img: "https://blog.sosa.cat/wp-content/uploads/2023/07/crema-frambuesa-sosa.png",
+            clasificacion: "Puré 100% Natural",
+            proceso: "Tamizado / Pasteurizado",
+            desc2: "Nuestro puré mantiene el color y aroma intenso característico. Se procesa en frío para evitar la oxidación y asegurar la máxima calidad nutricional.",
+        },
+    };
+
+    // Slider del Hero
+    const slides = document.querySelectorAll(".hero-slide");
+    let slideIndex = 0;
+    setInterval(() => {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+    }, 7000);
+
+    // Lógica de Intercambio de Producto
+    const buttons = document.querySelectorAll(".tab-btn");
+    const imgEl = document.getElementById("product-img") as HTMLImageElement;
+    const titleEl = document.getElementById("display-title");
+    const subtitleEl = document.getElementById("display-subtitle");
+    const specClas = document.getElementById("spec-clasificacion");
+    const specProc = document.getElementById("spec-proceso");
+    const desc2El = document.getElementById("desc-2");
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const type = btn.getAttribute("data-type") as "iqf" | "pure";
+            const info = productData[type];
+
+            // 1. Manejo de Clases de los Botones (Visual)
+            buttons.forEach((b) => {
+                // Removemos todas las posibles clases de estado
+                b.classList.remove(
+                    "bg-green-700",
+                    "text-white",
+                    "shadow-md",
+                    "border",
+                    "border-green-700",
+                    "text-green-700",
+                    "hover:bg-green-50",
+                );
+
+                if (b === btn) {
+                    // Estado Activo
+                    b.classList.add("bg-green-700", "text-white", "shadow-md");
+                } else {
+                    // Estado Inactivo
+                    b.classList.add(
+                        "border",
+                        "border-green-700",
+                        "text-green-700",
+                        "hover:bg-green-50",
+                    );
+                }
+            });
+
+            // 2. Cambio de Contenido con efecto
+            imgEl.classList.add("fade-out");
+            setTimeout(() => {
+                if (imgEl) imgEl.src = info.img;
+                if (titleEl) titleEl.innerText = info.title;
+                if (subtitleEl) subtitleEl.innerText = info.subtitle;
+                if (specClas) specClas.innerText = info.clasificacion;
+                if (specProc) specProc.innerText = info.proceso;
+                if (desc2El) desc2El.innerText = info.desc2;
+                imgEl.classList.remove("fade-out");
+            }, 200);
+        });
+    });
+</script>
