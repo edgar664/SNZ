@@ -39,121 +39,84 @@ const fruits = [
 		<!-- NAVBAR -->
 		<Navbar />
 
-		<!-- HERO -->
 		<section
-			class="relative h-[87vh] flex items-center justify-center text-center text-white overflow-hidden"
+			class="relative h-[100vh] flex items-center justify-center text-center text-white overflow-hidden"
 		>
-			<!-- IMAGENES -->
 			<div class="absolute inset-0">
 				<img
 					src="https://www.baltana.com/files/wallpapers-5/Raspberry-HD-Desktop-Wallpaper-16909.jpg"
 					class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
 				/>
-
 				<img
 					src="https://images.unsplash.com/photo-1464226184884-fa280b87c399"
 					class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
 				/>
-
 				<img
 					src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
 					class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
 				/>
 			</div>
 
-			<!-- Overlay -->
 			<div
-				class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/30 to-transparent"
+				class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-[#fdfdfd]"
 			>
 			</div>
 
-			<!-- CONTENIDO -->
-			<div class="relative max-w-3xl px-6">
-				<h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-					Sano y Nutritivo Zamora S.A. de C.V.
+			<div class="relative z-10 max-w-4xl px-6">
+				<div
+					class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.4em] uppercase bg-white/10 backdrop-blur-md border border-white/20 rounded-full"
+				>
+					Excelencia en el Campo
+				</div>
+				<h1
+					class="text-5xl md:text-8xl font-black mb-6 leading-tight drop-shadow-2xl"
+				>
+					SANO Y NUTRITIVO <span class="text-green-400">ZAMORA</span>
 				</h1>
-
-				<p class="text-lg md:text-xl opacity-90 mb-8">
-					Frutas frescas cultivadas con procesos naturales y
-					sostenibles. Calidad del campo directamente a tu negocio.
+				<p
+					class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto font-light italic"
+				>
+					"Calidad del campo directamente a tu negocio con procesos
+					sostenibles."
 				</p>
 			</div>
 		</section>
 
-		<section class="relative py-2 bg-gradient-to-b from-green-50 to-white">
-	<div class="max-w-6xl mx-auto px-6">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-			<!-- Kosher -->
-			<div
-				class="flex items-center gap-4 rounded-2xl px-6 py-5
-				bg-white/40 backdrop-blur-xl
-				border border-white/40
-				shadow-lg shadow-green-100/40
-				hover:bg-white/60 hover:shadow-xl
-				transition-all duration-300"
-			>
-
-				<div class="w-11 h-11 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-green-600 shadow-md">
-
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="w-6 h-6 text-white"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M20.285 6.709a1 1 0 010 1.414l-9.192 9.192a1 1 0 01-1.414 0L3.714 11.35a1 1 0 111.414-1.414l4.243 4.243 8.485-8.485a1 1 0 011.414 0z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-
-				</div>
-
-				<div>
-					<h3 class="font-semibold text-gray-900">
-						Certificación Kosher
-					</h3>
+		<section class="relative -mt-16 z-20 pb-20">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					{
+						["Certificación Kosher", "Certificación PrimusGFS"].map(
+							(cert) => (
+								<div class="flex items-center gap-6 rounded-[2.5rem] px-8 py-6 bg-white/70 backdrop-blur-2xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-2 transition-all duration-500 group">
+									<div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-700 shadow-lg group-hover:rotate-12 transition-transform">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="w-7 h-7 text-white"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="3"
+												d="M5 13l4 4L19 7"
+											/>
+										</svg>
+									</div>
+									<h3
+										class="font-bold text-xl text-gray-900"
+										data-key={cert}
+									>
+										{cert}
+									</h3>
+								</div>
+							),
+						)
+					}
 				</div>
 			</div>
-
-			<!-- Primus -->
-			<div
-				class="flex items-center gap-4 rounded-2xl px-6 py-5
-				bg-white/40 backdrop-blur-xl
-				border border-white/40
-				shadow-lg shadow-green-100/40
-				hover:bg-white/60 hover:shadow-xl
-				transition-all duration-300"
-			>
-
-				<div class="w-11 h-11 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-green-600 shadow-md">
-
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="w-6 h-6 text-white"
-						viewBox="0 0 24 24"
-						fill="currentColor"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M20.285 6.709a1 1 0 010 1.414l-9.192 9.192a1 1 0 01-1.414 0L3.714 11.35a1 1 0 111.414-1.414l4.243 4.243 8.485-8.485a1 1 0 011.414 0z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-
-				</div>
-
-				<div>
-					<h3 class="font-semibold text-gray-900">
-						Certificación PrimusGFS
-					</h3>
-				</div>
-			</div>
-
-		</div>
-	</div>
 		</section>
 
 		<!-- FRUTAS / PRODUCTOS -->
@@ -217,7 +180,7 @@ const fruits = [
 				<!-- TEXTO -->
 				<div>
 					<span
-						class="inline-block  bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4" 
+						class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4"
 					>
 						Sobre Nosotros
 					</span>
