@@ -7,18 +7,22 @@ const fruits = [
 	{
 		name: "Mango",
 		img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuu2lK_pa7Mf2W5mAkl2V_VDTmnZ43brmDuQ&s",
+		des: "Cultivado con técnicas sostenibles, nuestro mango ofrece un sabor dulce y jugoso, ideal para consumo fresco o en preparaciones culinarias.",
 	},
 	{
 		name: "Fresa",
 		img: "https://www.agrorganicos.mx/cdn/shop/products/fresa_1080x.jpg?v=1569251998",
+		des: "Nuestras fresas son cultivadas con procesos naturales, garantizando un sabor dulce y una textura jugosa, perfectas para consumo fresco o en postres.",
 	},
 	{
-		name: "Aguacate",
-		img: "https://www.smartnfinal.com.mx/wp-content/uploads/2016/09/18251-AGUACATE-HASS-1-KG.jpg",
+		name: "Frambuesa",
+		img: "https://maiaorganicos.mx/wp-content/uploads/2021/04/frambuesas-natural.jpg",
+		des: "Cultivada con técnicas sostenibles, nuestra frambuesa ofrece un sabor intenso y una textura jugosa, ideal para consumo fresco o en preparaciones culinarias.",
 	},
 	{
 		name: "Piña",
 		img: "https://www.herbazest.com/imgs/c/a/d/651803/pina.jpg",
+		des: "Cultivada con técnicas sostenibles, nuestra piña ofrece un sabor dulce y una textura jugosa, ideal para consumo fresco o en preparaciones culinarias.",
 	},
 ];
 ---
@@ -179,8 +183,7 @@ const fruits = [
 										{fruit.name}
 									</h3>
 									<p class="text-sm opacity-90">
-										Cultivada naturalmente y seleccionada
-										con estándares de calidad.
+										{fruit.des}
 									</p>
 								</div>
 							</div>
