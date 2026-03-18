@@ -1,0 +1,29 @@
+---
+// Definimos que el componente recibe una prop llamada "color"
+const { color = "text-gray-900" } = Astro.props;
+---
+
+<section class="py-2 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class={`text-3xl font-semibold mb-12 ${color}`}>
+            Estándares de Calidad
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-10 text-gray-600">
+            <div class="p-8 border rounded-2xl hover:shadow-lg transition">
+                <h4 class={`font-semibold mb-2 ${color}`}>BPM</h4>
+                <p>Buenas prácticas de manufactura aplicadas en todo el proceso.</p>
+            </div>
+
+            <div class="p-8 border rounded-2xl hover:shadow-lg transition">
+                <h4 class={`font-semibold mb-2 ${color}`}>HACCP</h4>
+                <p>Control de puntos críticos para garantizar seguridad alimentaria.</p>
+            </div>
+
+            <div class="p-8 border rounded-2xl hover:shadow-lg transition">
+                <h4 class={`font-semibold mb-2 ${color}`}>Exportación</h4>
+                <p>Producto preparado para mercados internacionales.</p>
+            </div>
+        </div>
+    </div>
+</section>

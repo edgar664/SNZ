@@ -1,0 +1,183 @@
+---
+import "../../styles/global.css";
+import Navbar from "../../Components/navbar.astro";
+import Footer from "../../Components/footer.astro";
+import Calidad from "../../Components/calidad.astro";
+
+// Imagen inicial: Mango en cubos/trozos (Chunk)
+const chunkImage = "https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=1000&auto=format&fit=crop";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SNZ | Mango</title>
+        <link rel="icon" href="/snz.ico" />
+    </head>
+
+    <body>
+        <Navbar />
+
+        <section class="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img
+                    src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=2070&auto=format&fit=crop"
+                    class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                    src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2070&auto=format&fit=crop"
+                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                    src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=2070&auto=format&fit=crop"
+                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+                />
+            </div>
+        </section>
+
+        <section class="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-20">
+                    <h2 id="display-title" class="text-4xl font-semibold tracking-tight text-gray-900 mb-6 transition-all duration-300">
+                        Mango Chunk IQF
+                    </h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-6 bg-amber-100/50 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition"></div>
+                        <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-[4/3]">
+                            <img
+                                id="product-img"
+                                src={chunkImage}
+                                alt="Mango Chunk"
+                                class="w-full h-full object-cover transition-opacity duration-500"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex gap-3 mb-10">
+                            <button
+                                id="btn-chunk"
+                                data-type="chunk"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-amber-600 text-white shadow-md"
+                            >
+                                Chunk IQF
+                            </button>
+                            <button
+                                id="btn-pure"
+                                data-type="pure"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all border border-amber-600 text-amber-600 hover:bg-amber-50"
+                            >
+                                Puré
+                            </button>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">Presentación</h3>
+                        <div class="border-t border-gray-200 mb-8"></div>
+
+                        <div class="grid grid-cols-2 gap-6 mb-12 text-sm">
+                            <div>
+                                <p class="text-gray-400">Clasificación</p>
+                                <p id="spec-clasificacion" class="font-semibold text-gray-800">Mango Kent / Ataulfo</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Temperatura</p>
+                                <p class="font-semibold text-gray-800">-18°C</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Proceso</p>
+                                <p id="spec-proceso" class="font-semibold text-gray-800">Chunk IQF (Corte en cubos)</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Control</p>
+                                <p class="font-semibold text-gray-800">Detector de metales</p>
+                            </div>
+                        </div>
+
+                        <p id="desc-1" class="text-gray-600 leading-relaxed mb-6">
+                            Seleccionamos los mejores mangos en su punto exacto de dulzor (Brix controlado). Nuestro corte en cubos o "chunks" es uniforme y libre de fibra excesiva.
+                        </p>
+                        <p id="desc-2" class="text-gray-600 leading-relaxed">
+                            El proceso de congelación Chunk IQF garantiza que cada trozo mantenga su forma y sabor tropical intenso, ideal para la industria de smoothies, repostería y snacks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Calidad color="text-amber-600" />
+        <Footer />
+    </body>
+</html>
+
+<style>
+    .hero-img { animation: heroZoom 30s ease-in-out infinite alternate; }
+    .hero-slide { opacity: 0; transition: opacity 2s ease; }
+    .hero-slide.active { opacity: 1; }
+    @keyframes heroZoom { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
+    .fade-out { opacity: 0; }
+</style>
+
+<script>
+    const productData = {
+        chunk: {
+            title: "Mango Chunk IQF",
+            img: "https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=1000&auto=format&fit=crop",
+            clasificacion: "Mango Kent / Ataulfo",
+            proceso: "Chunk IQF (Corte en cubos)",
+            desc2: "El proceso de congelación Chunk IQF garantiza que cada trozo mantenga su forma y sabor tropical intenso, ideal para la industria de smoothies, repostería y snacks.",
+        },
+        pure: {
+            title: "Puré de Mango",
+            img: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?q=80&w=1000&auto=format&fit=crop",
+            clasificacion: "Pulpa 100% Natural",
+            proceso: "Despulpado / Tamizado",
+            desc2: "Puré de mango de alta viscosidad y color brillante. Pasteurizado para mantener la seguridad alimentaria sin sacrificar el perfil aromático de la fruta fresca.",
+        },
+    };
+
+    const slides = document.querySelectorAll(".hero-slide");
+    let slideIndex = 0;
+    setInterval(() => {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+    }, 7000);
+
+    const buttons = document.querySelectorAll(".tab-btn");
+    const imgEl = document.getElementById("product-img") as HTMLImageElement;
+    const titleEl = document.getElementById("display-title");
+    const specClas = document.getElementById("spec-clasificacion");
+    const specProc = document.getElementById("spec-proceso");
+    const desc2El = document.getElementById("desc-2");
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const type = btn.getAttribute("data-type") as "chunk" | "pure";
+            const info = productData[type];
+
+            buttons.forEach((b) => {
+                b.classList.remove("bg-amber-600", "text-white", "shadow-md", "border", "border-amber-600", "text-amber-600", "hover:bg-amber-50");
+                if (b === btn) {
+                    b.classList.add("bg-amber-600", "text-white", "shadow-md");
+                } else {
+                    b.classList.add("border", "border-amber-600", "text-amber-600", "hover:bg-amber-50");
+                }
+            });
+
+            imgEl.classList.add("fade-out");
+            setTimeout(() => {
+                if (imgEl) imgEl.src = info.img;
+                if (titleEl) titleEl.innerText = info.title;
+                if (specClas) specClas.innerText = info.clasificacion;
+                if (specProc) specProc.innerText = info.proceso;
+                if (desc2El) desc2El.innerText = info.desc2;
+                imgEl.classList.remove("fade-out");
+            }, 200);
+        });
+    });
+</script>

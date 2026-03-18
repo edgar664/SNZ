@@ -1,0 +1,183 @@
+---
+import "../../styles/global.css";
+import Navbar from "../../Components/navbar.astro";
+import Footer from "../../Components/footer.astro";
+import Calidad from "../../Components/calidad.astro";
+
+const iqfImage = "https://adex-b2peru.s3.amazonaws.com/userfiles/product/photos/329_5f73b154e917d.jpg";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SNZ | Fresa</title>
+        <link rel="icon" href="/snz.ico" />
+    </head>
+
+    <body>
+        <Navbar />
+
+        <section class="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img
+                    src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=2070&auto=format&fit=crop"
+                    class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                    src="https://dfinnova.com/wp-content/uploads/2022/12/AdobeStock_294179767_opt.jpg"
+                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                    src="https://static-cla-nys.pro.centrallecheraasturiana.es/uploads/2020/11/bol-fresas@2x.jpg"
+                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+                />
+            </div>
+        </section>
+
+        <section class="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-20">
+                    <h2 id="display-title" class="text-4xl font-semibold tracking-tight text-gray-900 mb-6 transition-all duration-300">
+                        Fresa IQF
+                    </h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-6 bg-red-100/50 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition"></div>
+                        <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-[4/3]">
+                            <img
+                                id="product-img"
+                                src={iqfImage}
+                                alt="Fresa"
+                                class="w-full h-full object-cover transition-opacity duration-500"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex gap-3 mb-10">
+                            <button
+                                id="btn-iqf"
+                                data-type="iqf"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-red-700 text-white shadow-md"
+                            >
+                                IQF
+                            </button>
+                            <button
+                                id="btn-pure"
+                                data-type="pure"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all border border-red-700 text-red-700 hover:bg-red-50"
+                            >
+                                Puré
+                            </button>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold text-red-700 mb-6">Presentación</h3>
+                        <div class="border-t border-gray-200 mb-8"></div>
+
+                        <div class="grid grid-cols-2 gap-6 mb-12 text-sm">
+                            <div>
+                                <p class="text-gray-400">Clasificación</p>
+                                <p id="spec-clasificacion" class="font-semibold">Fresa Entera Grado A</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Temperatura</p>
+                                <p class="font-semibold">-18°C</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Proceso</p>
+                                <p id="spec-proceso" class="font-semibold">IQF</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Control</p>
+                                <p class="font-semibold">Detector de metales</p>
+                            </div>
+                        </div>
+
+                        <p id="desc-1" class="text-gray-600 leading-relaxed mb-6">
+                            Producto elaborado a partir de fresas seleccionadas de las variedades Albión y Camino Real, cosechadas en su punto máximo de maduración para garantizar sabor y color intenso.
+                        </p>
+                        <p id="desc-2" class="text-gray-600 leading-relaxed">
+                            Nuestro proceso de ultra-congelación rápida (IQF) mantiene la estructura celular del fruto, evitando la formación de cristales de hielo internos y preservando su frescura.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALIDAD -->
+        <Calidad color="text-red-700" />
+        <Footer />
+    </body>
+</html>
+
+<style>
+    .hero-img { animation: heroZoom 30s ease-in-out infinite alternate; }
+    .hero-slide { opacity: 0; transition: opacity 2s ease; }
+    .hero-slide.active { opacity: 1; }
+    @keyframes heroZoom { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
+    .fade-out { opacity: 0; }
+</style>
+
+<script>
+    const productData = {
+        iqf: {
+            title: "Fresa IQF",
+            img: "https://adex-b2peru.s3.amazonaws.com/userfiles/product/photos/329_5f73b154e917d.jpg",
+            clasificacion: "Fresa Entera Grado A",
+            proceso: "IQF",
+            desc2: "Nuestro proceso de ultra-congelación rápida (IQF) mantiene la estructura celular del fruto, evitando la formación de cristales de hielo internos y preservando su frescura.",
+        },
+        pure: {
+            title: "Puré de Fresa",
+            img: "https://pacificfruitperu.com/cdn/shop/files/pure-fresa-2.jpg?v=1759784775",
+            clasificacion: "Puré con o sin Semilla",
+            proceso: "Despulpado / Pasteurizado",
+            desc2: "Puré 100% natural, obtenido por procesos mecánicos de tamizado que conservan el brix y la acidez natural de la fruta fresca de temporada.",
+        },
+    };
+
+    const slides = document.querySelectorAll(".hero-slide");
+    let slideIndex = 0;
+    setInterval(() => {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+    }, 7000);
+
+    const buttons = document.querySelectorAll(".tab-btn");
+    const imgEl = document.getElementById("product-img") as HTMLImageElement;
+    const titleEl = document.getElementById("display-title");
+    const specClas = document.getElementById("spec-clasificacion");
+    const specProc = document.getElementById("spec-proceso");
+    const desc2El = document.getElementById("desc-2");
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const type = btn.getAttribute("data-type") as "iqf" | "pure";
+            const info = productData[type];
+
+            buttons.forEach((b) => {
+                b.classList.remove("bg-red-700", "text-white", "shadow-md", "border", "border-red-700", "text-red-700", "hover:bg-red-50");
+                if (b === btn) {
+                    b.classList.add("bg-red-700", "text-white", "shadow-md");
+                } else {
+                    b.classList.add("border", "border-red-700", "text-red-700", "hover:bg-red-50");
+                }
+            });
+
+            imgEl.classList.add("fade-out");
+            setTimeout(() => {
+                if (imgEl) imgEl.src = info.img;
+                if (titleEl) titleEl.innerText = info.title;
+                if (specClas) specClas.innerText = info.clasificacion;
+                if (specProc) specProc.innerText = info.proceso;
+                if (desc2El) desc2El.innerText = info.desc2;
+                imgEl.classList.remove("fade-out");
+            }, 200);
+        });
+    });
+</script>
