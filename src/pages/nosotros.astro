@@ -2,30 +2,392 @@
 import "../styles/global.css";
 import Navbar from "../Components/navbar.astro";
 import Footer from "../Components/footer.astro";
-
-const fruits = [
-
+// Si tienes un array de valores o stats, puedes definirlos aquí
+const stats = [
+    { label: "Años", value: "9+", key: "Años" },
+    { label: "Productos", value: "15+", key: "Productos" },
+    { label: "Mercados", value: "10+", key: "Mercados" },
 ];
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNZ | Nosotros</title>
-	<link rel="icon" href="/snz.ico" />
-</head>
-<header>
-    <Navbar />
-</header>
-<body class="bg-gray-50 text-gray-800 pt-20">
-    <section class="relative h-[80vh] flex items-center justify-center text-center text-white">
-<h1>Hola</h1>    
-    </section>
-    
-</body>
 
-    <footer>
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SNZ | Nosotros</title>
+        <link rel="icon" href="/snz2.ico" />
+    </head>
+
+    <body>
+        <Navbar />
+        <section
+            class="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden"
+        >
+            <div class="absolute inset-0">
+                <img
+                    src="sano.jpg"
+                    class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                    src="https://verdecora.es/blog/wp-content/uploads/2018/01/guia-para-plantar-frambuesas.jpg"
+                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                    src="https://www.fresondepalos.es/wp-content/uploads/2024/12/fdp-181224-Blog.jpg"
+                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+                />
+                
+            </div>
+            <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/30 to-transparent"
+                >
+                </div>
+                <!-- CONTENIDO -->
+			<div class="relative max-w-3xl px-6">
+				<h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+					NOSOTROS COMO EMPRESA
+				</h1>
+			</div>
+        </section>
+        <main class="bg-white">
+            <section class="relative pt-32 pb-20 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <span
+                                class="inline-block bg-green-100 text-green-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest"
+                                data-key="Sobre Nosotros"
+                            >
+                                Sobre Nosotros
+                            </span>
+                            <h1
+                                class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight"
+                                data-key="¿Quiénes Somos?"
+                            >
+                                ¿Quiénes Somos?
+                            </h1>
+                            <div
+                                class="space-y-4 text-gray-600 text-lg leading-relaxed"
+                            >
+                                <p data-key="Quienes_Somos_P1">
+                                    Somos una empresa mexicana ubicada en Zamora
+                                    Michoacán, que inició operaciones en abril
+                                    2017 como FRUTI ALVA. A través del tiempo,
+                                    hemos logrado una expansión y consolidación
+                                    de instalaciones que cumplen con las normas
+                                    internacionales.
+                                </p>
+                                <p data-key="Quienes_Somos_P2">
+                                    Hoy en día, somos <strong
+                                        class="text-green-700"
+                                        >SANO Y NUTRITIVO ZAMORA</strong
+                                    >, empresa Certificada en SQF orientada a la
+                                    comercialización y exportación de frutas y
+                                    verduras en diversas presentaciones con
+                                    inocuidad y mejor servicio.
+                                </p>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-4 mt-8 p-4 bg-green-50 rounded-2xl border border-green-100"
+                            >
+                                <div
+                                    class="h-12 w-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold"
+                                >
+                                    ML
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900">
+                                        Miguel López Alvarado
+                                    </p>
+                                    <p
+                                        class="text-sm text-green-700 font-medium"
+                                        data-key="Fundador"
+                                    >
+                                        Fundador y Director General
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div
+                                class="absolute -inset-4 bg-green-400/20 blur-3xl rounded-full"
+                            >
+                            </div>
+                            <img
+                                src="snz.jpg"
+                                alt="Instalaciones SNZ"
+                                class="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover border-8 border-white"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+                    <div
+                        class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 hover:-translate-y-2 transition-transform duration-500"
+                    >
+                        <div
+                            class="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-green-200"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h2
+                            class="text-3xl font-bold text-gray-900 mb-4"
+                            data-key="Misión"
+                        >
+                            Misión
+                        </h2>
+                        <p
+                            class="text-gray-600 leading-relaxed"
+                            data-key="Mision_Documento"
+                        >
+                            Ofrecer a nuestros clientes frutas y verduras
+                            congeladas, asegurando que se cumplan los estándares
+                            de calidad e inocuidad, manteniendo en todo momento
+                            los valores institucionales.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-green-700 p-10 rounded-[2.5rem] shadow-xl text-white hover:-translate-y-2 transition-transform duration-500"
+                    >
+                        <div
+                            class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-white mb-6"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4" data-key="Visión">
+                            Visión
+                        </h2>
+                        <p
+                            class="text-green-50 leading-relaxed"
+                            data-key="Vision_Documento"
+                        >
+                            Ser una empresa altamente competitiva y reconocida a
+                            nivel internacional por la calidad y buen manejo de
+                            nuestros productos. Posicionándonos como líder en el
+                            sector agroalimentario, siendo vanguardista para
+                            cumplir las expectativas de nuestros clientes.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20">
+                <div class="max-w-5xl mx-auto px-6">
+                    <div
+                        class="bg-gradient-to-r from-green-800 to-green-600 rounded-[3rem] p-12 text-center text-white relative overflow-hidden"
+                    >
+                        <div class="absolute top-0 right-0 p-8 opacity-10">
+                            <svg
+                                width="200"
+                                height="200"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                                ></path></svg
+                            >
+                        </div>
+                        <h2
+                            class="text-2xl md:text-3xl font-bold mb-6"
+                            data-key="Política de Calidad e inocuidad"
+                        >
+                            Política de Calidad e inocuidad
+                        </h2>
+                        <p
+                            class="text-xl text-green-50 italic font-light"
+                            data-key="Politica_Desc"
+                        >
+                            "Nos comprometemos a trabajar, mantener y mejorar la
+                            cultura de inocuidad, con la finalidad de procesar,
+                            distribuir y comercializar nuestros productos que
+                            garanticen el cumplimiento de las normas y
+                            legislaciones vigentes."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="text-4xl font-bold text-gray-900"
+                            data-key="Valores"
+                        >
+                            Nuestros Valores
+                        </h2>
+                        <p class="text-gray-500 mt-4" data-key="Valores_Sub">
+                            La base de nuestra cultura organizacional
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div
+                            class="p-8 rounded-3xl bg-gray-50 border border-gray-100"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-700 mb-3"
+                                data-key="Competitividad"
+                            >
+                                Competitividad
+                            </h3>
+                            <p class="text-gray-600 text-sm">
+                                Ser capaz de crear e implementar conocimientos
+                                en forma práctica de una manera competitiva.
+                            </p>
+                        </div>
+                        <div
+                            class="p-8 rounded-3xl bg-gray-50 border border-gray-100"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-700 mb-3"
+                                data-key="Responsabilidad"
+                            >
+                                Responsabilidad
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm"
+                                data-key="Valor_Resp"
+                            >
+                                Tener compromiso con los proyectos para asegurar
+                                su éxito y ser capaz de asumir consecuencias.
+                            </p>
+                        </div>
+                        <div
+                            class="p-8 rounded-3xl bg-gray-50 border border-gray-100"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-700 mb-3"
+                                data-key="Iniciativa"
+                            >
+                                Iniciativa
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm"
+                                data-key="Valor_Ini"
+                            >
+                                Tomar activamente el control de las situaciones
+                                y crear soluciones sin necesidad de
+                                requerimiento externo.
+                            </p>
+                        </div>
+                        <div
+                            class="p-8 rounded-3xl bg-gray-50 border border-gray-100"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-700 mb-3"
+                                data-key="Confianza"
+                            >
+                                Confianza
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm"
+                                data-key="Valor_Conf"
+                            >
+                                Crear lazos de respeto, honestidad y
+                                responsabilidad entre empleados y el empleador.
+                            </p>
+                        </div>
+                        <div
+                            class="p-8 rounded-3xl bg-gray-50 border border-gray-100"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-700 mb-3"
+                                data-key="Pasión"
+                            >
+                                Pasión
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm"
+                                data-key="Valor_Pas"
+                            >
+                                Crear un ambiente laboral de empeño y cariño,
+                                logrando un gran desempeño.
+                            </p>
+                        </div>
+                        <div
+                            class="p-8 rounded-3xl bg-green-50 border border-green-100"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-800 mb-3"
+                                data-key="Ética"
+                            >
+                                Ética Profesional
+                            </h3>
+                            <p
+                                class="text-gray-600 text-sm"
+                                data-key="Valor_Etic"
+                            >
+                                Mantenemos sanas relaciones basadas en el
+                                respeto mutuo, tolerancia y confidencialidad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
         <Footer />
-    </footer>
+    </body>
 </html>
+<style>
+    /* Estilos del Hero */
+    .hero-img {
+        animation: heroZoom 30s ease-in-out infinite alternate;
+    }
+    .hero-slide {
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    .hero-slide.active {
+        opacity: 1;
+    }
+    @keyframes heroZoom {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.15);
+        }
+    }
+    .fade-out {
+        opacity: 0;
+    }
+</style>
