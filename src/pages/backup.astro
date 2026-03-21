@@ -1,0 +1,414 @@
+---
+import "../styles/global.css";
+import Navbar from "../Components/navbar.astro";
+import Footer from "../Components/footer.astro";
+
+const fruits = [
+	{
+		name: "Mango",
+		img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuu2lK_pa7Mf2W5mAkl2V_VDTmnZ43brmDuQ&s",
+		des: "Cultivado con técnicas sostenibles, nuestro mango ofrece un sabor dulce y jugoso, ideal para consumo fresco o en preparaciones culinarias.",
+	},
+	{
+		name: "Fresa",
+		img: "https://www.agrorganicos.mx/cdn/shop/products/fresa_1080x.jpg?v=1569251998",
+		des: "Nuestras fresas son cultivadas con procesos naturales, garantizando un sabor dulce y una textura jugosa, perfectas para consumo fresco o en postres.",
+	},
+	{
+		name: "Frambuesa",
+		img: "https://maiaorganicos.mx/wp-content/uploads/2021/04/frambuesas-natural.jpg",
+		des: "Cultivada con técnicas sostenibles, nuestra frambuesa ofrece un sabor intenso y una textura jugosa, ideal para consumo fresco o en preparaciones culinarias.",
+	},
+	{
+		name: "Piña",
+		img: "https://www.herbazest.com/imgs/c/a/d/651803/pina.jpg",
+		des: "Cultivada con técnicas sostenibles, nuestra piña ofrece un sabor dulce y una textura jugosa, ideal para consumo fresco o en preparaciones culinarias.",
+	},
+];
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>SyNZ | Bienvenido</title>
+		<link rel="icon" href="/snz2.ico" />
+	</head>
+
+	<body class="bg-gray-50 text-gray-800">
+		<!-- NAVBAR -->
+		<Navbar />
+
+		<section
+			class="relative h-[100vh] flex items-center justify-center text-center text-white overflow-hidden"
+		>
+			<div class="absolute inset-0">
+				<img
+					src="https://www.baltana.com/files/wallpapers-5/Raspberry-HD-Desktop-Wallpaper-16909.jpg"
+					class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
+				/>
+				<img
+					src="https://images.unsplash.com/photo-1464226184884-fa280b87c399"
+					class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+				/>
+				<img
+					src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
+					class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
+				/>
+			</div>
+
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-[#fdfdfd]"
+			>
+			</div>
+
+			<div class="relative z-10 max-w-4xl px-6">
+				<div
+					class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-[0.4em] uppercase bg-white/10 backdrop-blur-md border border-white/20 rounded-full"
+				>
+					Excelencia en el Campo
+				</div>
+				<h1
+					class="text-5xl md:text-8xl font-black mb-6 leading-tight drop-shadow-2xl"
+				>
+					SANO Y NUTRITIVO <span class="text-green-400">ZAMORA</span>
+				</h1>
+				<p
+					class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto font-light italic"
+				>
+					"Calidad del campo directamente a tu negocio con procesos
+					sostenibles."
+				</p>
+			</div>
+		</section>
+
+		<section class="relative -mt-16 z-20 pb-20">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					{
+						["Certificación Kosher", "Certificación PrimusGFS"].map(
+							(cert) => (
+								<div class="flex items-center gap-6 rounded-[2.5rem] px-8 py-6 bg-white/70 backdrop-blur-2xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-2 transition-all duration-500 group">
+									<div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-700 shadow-lg group-hover:rotate-12 transition-transform">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											class="w-7 h-7 text-white"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="3"
+												d="M5 13l4 4L19 7"
+											/>
+										</svg>
+									</div>
+									<h3
+										class="font-bold text-xl text-gray-900"
+										data-key={cert}
+									>
+										{cert}
+									</h3>
+								</div>
+							),
+						)
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- FRUTAS / PRODUCTOS -->
+		<section class="py-28 px-6 bg-gradient-to-b from-white to-green-50">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl font-bold text-green-800">
+						Nuestras Frutas
+					</h2>
+					<p class="text-gray-500 mt-4">
+						Cultivadas con calidad y procesos naturales
+					</p>
+				</div>
+
+				<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+					{
+						fruits.map((fruit) => (
+							<div class="group relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition duration-500">
+								<img
+									src={fruit.img}
+									alt={fruit.name}
+									class="h-80 w-full object-cover group-hover:scale-110 transition-transform duration-700"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+								<div class="absolute bottom-0 p-6 text-white">
+									<h3 class="text-2xl font-bold mb-1">
+										{fruit.name}
+									</h3>
+									<p class="text-sm opacity-90">
+										{fruit.des}
+									</p>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- SOBRE NOSOTROS -->
+		<section
+			class="py-20 px-6 bg-gradient-to-b from-white via-green-50 to-white"
+		>
+			<div
+				class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center"
+			>
+				<!-- IMAGEN -->
+				<div class="relative group">
+					<div
+						class="absolute -inset-3 bg-green-200/20 blur-xl rounded-3xl group-hover:bg-green-300/30 transition"
+					>
+					</div>
+
+					<img
+						src="sano.jpg"
+						class="relative rounded-xl shadow-xl object-cover"
+						alt="Imagen de la empresa"
+					/>
+				</div>
+
+				<!-- TEXTO -->
+				<div>
+					<span
+						class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4"
+					>
+						Sobre Nosotros
+					</span>
+
+					<h2
+						class="text-3xl md:text-4xl font-bold text-green-800 mb-4 leading-tight"
+					>
+						Nuestra Historia
+					</h2>
+
+					<p class="text-gray-600 leading-relaxed mb-8">
+						Somos una empresa familiar dedicada a la producción y
+						exportación de frutas frescas. Nuestro compromiso es
+						ofrecer alimentos saludables cultivados con procesos
+						responsables y respeto al medio ambiente.
+					</p>
+
+					<!-- STATS -->
+					<div class="grid grid-cols-3 gap-6 text-center">
+						<div>
+							<p class="text-2xl font-bold text-green-700">9+</p>
+							<p class="text-xs text-gray-500">Años</p>
+						</div>
+
+						<div>
+							<p class="text-2xl font-bold text-green-700">5+</p>
+							<p class="text-xs text-gray-500">Productos</p>
+						</div>
+
+						<div>
+							<p class="text-2xl font-bold text-green-700">3+</p>
+							<p class="text-xs text-gray-500">Mercados</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- MISION / VISION / VALORES -->
+		<section
+			class="py-28 px-6 bg-gradient-to-br from-green-50 via-white to-green-100"
+		>
+			<div class="max-w-7xl mx-auto">
+				<h2
+					class="text-center text-4xl md:text-5xl font-bold text-green-800 mb-20"
+				>
+					Nuestra Filosofía
+				</h2>
+
+				<div class="grid gap-10 md:grid-cols-3">
+					<div
+						class="backdrop-blur-lg bg-white/60 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 transition"
+					>
+						<div class="text-4xl mb-6">🎯</div>
+						<h3 class="text-xl font-semibold text-green-700 mb-4">
+							Misión
+						</h3>
+						<p class="text-gray-700 text-sm leading-relaxed">
+							Ofrecer a nuestros clientes frutas y verduras
+							congeladas asegurando altos estándares de calidad e
+							inocuidad, manteniendo nuestros valores.
+						</p>
+					</div>
+
+					<div
+						class="backdrop-blur-lg bg-white/60 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 transition"
+					>
+						<div class="text-4xl mb-6">🌎</div>
+						<h3 class="text-xl font-semibold text-green-700 mb-4">
+							Visión
+						</h3>
+						<p class="text-gray-700 text-sm leading-relaxed">
+							Ser una empresa reconocida internacionalmente por la
+							calidad y manejo de nuestros productos
+							agroalimentarios.
+						</p>
+					</div>
+
+					<div
+						class="backdrop-blur-lg bg-white/60 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 transition"
+					>
+						<div class="text-4xl mb-6">🤝</div>
+						<h3 class="text-xl font-semibold text-green-700 mb-4">
+							Valores
+						</h3>
+						<ul class="text-gray-700 text-sm space-y-2">
+							<li>• Competitividad</li>
+							<li>• Responsabilidad</li>
+							<li>• Iniciativa</li>
+							<li>• Confianza</li>
+							<li>• Pasión</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- PROCESO -->
+		<section class="py-28 px-6 bg-white">
+			<div class="max-w-6xl mx-auto text-center">
+				<h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-20">
+					Nuestro Proceso
+				</h2>
+
+				<div class="relative">
+					<div
+						class="hidden md:block absolute top-10 left-0 right-0 h-1 bg-green-200"
+					>
+					</div>
+					<div class="grid md:grid-cols-4 gap-12">
+						<div class="relative">
+							<div
+								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
+							>
+								🌱
+							</div>
+							<h3 class="font-semibold mb-2">Cultivo</h3>
+							<p class="text-sm text-gray-600">
+								Semillas seleccionadas y técnicas sostenibles.
+							</p>
+						</div>
+
+						<div class="relative">
+							<div
+								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
+							>
+								🍃
+							</div>
+							<h3 class="font-semibold mb-2">Cosecha</h3>
+							<p class="text-sm text-gray-600">
+								Recolectamos cada fruta en su punto perfecto.
+							</p>
+						</div>
+
+						<div class="relative">
+							<div
+								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
+							>
+								📦
+							</div>
+							<h3 class="font-semibold mb-2">Empaque</h3>
+							<p class="text-sm text-gray-600">
+								Clasificación y empaque para mantener frescura.
+							</p>
+						</div>
+
+						<div class="relative">
+							<div
+								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
+							>
+								🚚
+							</div>
+							<h3 class="font-semibold mb-2">Distribución</h3>
+							<p class="text-sm text-gray-600">
+								Llevamos fruta fresca a mercados
+								internacionales.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA FINAL MINIMAL -->
+		<section class="py-32 px-6">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2
+					class="text-4xl md:text-5xl font-semibold text-gray-900 mb-6"
+				>
+					Trabajemos juntos
+				</h2>
+
+				<p class="text-lg text-gray-500 mb-10">
+					Si buscas frutas frescas para tu negocio o distribución,
+					podemos ayudarte a llevar productos de calidad a tu mercado.
+				</p>
+
+				<a
+					href="/contactanos"
+					class="inline-flex items-center gap-2 text-green-700 font-semibold text-lg
+		border-b-2 border-green-600 pb-1
+		hover:border-green-800 hover:text-green-800
+		transition-all duration-300"
+				>
+					Contactar
+					<span>→</span>
+				</a>
+			</div>
+		</section>
+		<!-- FOOTER -->
+		<Footer />
+	</body>
+</html>
+<style>
+	/* zoom suave */
+	.hero-img {
+		animation: heroZoom 30s ease-in-out infinite alternate;
+	}
+
+	/* fade slider */
+	.hero-slide {
+		opacity: 0;
+		transition: opacity 2s ease;
+	}
+
+	.hero-slide.active {
+		opacity: 1;
+	}
+
+	/* zoom animation */
+	@keyframes heroZoom {
+		0% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(1.15);
+		}
+	}
+</style>
+
+<script>
+	const slides = document.querySelectorAll(".hero-slide");
+	let index = 0;
+
+	setInterval(() => {
+		slides[index].classList.remove("active");
+
+		index = (index + 1) % slides.length;
+
+		slides[index].classList.add("active");
+	}, 7000);
+</script>
