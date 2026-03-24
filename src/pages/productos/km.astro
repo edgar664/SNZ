@@ -4,7 +4,8 @@ import Navbar from "../../Components/navbar.astro";
 import Footer from "../../Components/footer.astro";
 import Calidad from "../../Components/calidad.astro";
 
-const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-Mango-2.webp";
+// Imagen del Kiwi (Pestaña inicial)
+const kiwiImage = "/purekiwi.jpeg";
 ---
 
 <!doctype html>
@@ -12,7 +13,7 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SNZ | Mango</title>
+        <title>SNZ | Exóticos</title>
         <link rel="icon" href="/snz2.ico" />
     </head>
 
@@ -22,15 +23,11 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
         <section class="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
             <div class="absolute inset-0">
                 <img
-                    src="https://www.descours.fr/wp-content/uploads/2019/03/Cube-de-mangue-surgele.jpg"
+                    src="https://www-assets.liebherr.com/media/bu-media/lhbu-hau/global/freshmag/kiwi/planting-kiwi-liebherr-story-169-600.webp"
                     class="hero-img hero-slide active absolute inset-0 w-full h-full object-cover"
                 />
                 <img
-                    src="https://media.istockphoto.com/id/1172115256/es/foto/campo-de-mango-granja-de-mango-con-fondo-de-cielo-azul-concepto-de-fondo-agrícola-retoque.jpg?s=612x612&w=0&k=20&c=wsT96Of4oygGnlqhKTrH_P1uvu2V_hY_DNIWCRM3C78="
-                    class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
-                />
-                <img
-                    src="https://t4.ftcdn.net/jpg/17/59/59/85/360_F_1759598551_JbmXEKioJhqIxACgCKhmT9udDIaWdalo.jpg"
+                    src="https://konekstrade.com/wp-content/uploads/2024/09/maracuya-scaled.jpg"
                     class="hero-img hero-slide absolute inset-0 w-full h-full object-cover"
                 />
             </div>
@@ -40,23 +37,23 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
             <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-20">
                     <h2 id="display-title" class="text-4xl font-semibold tracking-tight text-gray-900 mb-6 transition-all duration-300">
-                        Mango Chunk IQF
+                        Kiwi Seleccionado
                     </h2>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-20 items-center">
                     <div class="relative group">
-                        <div class="absolute -inset-6 bg-amber-100/50 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition"></div>
+                        <div id="bg-glow" class="absolute -inset-6 bg-green-100/50 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition"></div>
                         <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100 aspect-[4/3]">
                             <img
                                 id="product-img"
-                                src={chunkImage}
-                                alt="Mango Chunk"
+                                src={kiwiImage}
+                                alt="Kiwi"
                                 class="w-full h-full object-cover transition-opacity duration-500"
                             />
                             <video
                                 id="product-video"
-                                src="/mangochunkiqf.mp4"
+                                src="/maracuya.mp4" 
                                 autoplay
                                 muted
                                 loop
@@ -69,55 +66,55 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
                     <div>
                         <div class="flex gap-3 mb-10">
                             <button
-                                id="btn-chunk"
-                                data-type="chunk"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-amber-600 text-white shadow-md"
+                                id="btn-kiwi"
+                                data-type="kiwi"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-green-700 text-white shadow-md"
                             >
-                                Chunk IQF
+                                Kiwi
                             </button>
                             <button
-                                id="btn-pure"
-                                data-type="pure"
-                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all border border-amber-600 text-amber-600 hover:bg-amber-50"
+                                id="btn-maracuya"
+                                data-type="maracuya"
+                                class="tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all border border-yellow-600 text-yellow-700 hover:bg-yellow-50"
                             >
-                                Puré
+                                Maracuyá
                             </button>
                         </div>
 
-                        <h3 class="text-2xl font-semibold text-amber-700 mb-6">Presentación</h3>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Especificaciones</h3>
                         <div class="border-t border-gray-200 mb-8"></div>
 
                         <div class="grid grid-cols-2 gap-6 mb-12 text-sm">
                             <div>
-                                <p class="text-gray-400">Clasificación</p>
-                                <p id="spec-clasificacion" class="font-semibold text-gray-800">Mango Kent / Ataulfo</p>
+                                <p class="text-gray-400">Variedad</p>
+                                <p id="spec-clasificacion" class="font-semibold text-gray-800">Kiwi Hayward</p>
                             </div>
                             <div>
                                 <p class="text-gray-400">Temperatura</p>
-                                <p class="font-semibold text-gray-800">-18°C</p>
+                                <p class="font-semibold text-gray-800">-18°C / Fresco</p>
                             </div>
                             <div>
                                 <p class="text-gray-400">Proceso</p>
-                                <p id="spec-proceso" class="font-semibold text-gray-800">Chunk IQF (Corte en cubos)</p>
+                                <p id="spec-proceso" class="font-semibold text-gray-800">Corte Manual / IQF</p>
                             </div>
                             <div>
-                                <p class="text-gray-400">Control</p>
-                                <p class="font-semibold text-gray-800">Detector de metales</p>
+                                <p class="text-gray-400">Calidad</p>
+                                <p class="font-semibold text-gray-800">Grado Exportación</p>
                             </div>
                         </div>
 
                         <p id="desc-1" class="text-gray-600 leading-relaxed mb-6">
-                            Seleccionamos los mejores mangos en su punto exacto de dulzor (Brix controlado). Nuestro corte en cubos o "chunks" es uniforme y libre de fibra excesiva.
+                            Selección premium de frutas tropicales y exóticas, procesadas bajo estándares internacionales para mantener su frescura y valor nutricional.
                         </p>
                         <p id="desc-2" class="text-gray-600 leading-relaxed">
-                            El proceso de congelación Chunk IQF garantiza que cada trozo mantenga su forma y sabor tropical intenso, ideal para la industria de smoothies, repostería y snacks.
+                            Nuestro kiwi mantiene su textura firme y sus semillas características intactas. Ideal para toppings, ensaladas y decoración de alta repostería.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <Calidad color="text-amber-600" />
+        
+        <Calidad color="text-green-700" />
         <Footer />
     </body>
 </html>
@@ -132,19 +129,31 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
 
 <script>
     const productData = {
-        chunk: {
-            title: "Mango Chunk IQF",
-            img: "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-Mango-2.webp", 
-            clasificacion: "Mango Kent / Ataulfo",
-            proceso: "Chunk IQF (Corte en cubos)",
-            desc2: "El proceso de congelación Chunk IQF garantiza que cada trozo mantenga su forma y sabor tropical intenso, ideal para la industria de smoothies, repostería y snacks.",
+        kiwi: {
+            title: "Kiwi Seleccionado",
+            img: "/purekiwi.jpeg",
+            clasificacion: "Kiwi Hayward",
+            proceso: "Corte Manual / IQF",
+            desc2: "Nuestro kiwi mantiene su textura firme y sus semillas características intactas. Ideal para toppings, ensaladas y decoración de alta repostería.",
+            colorBtn: "bg-green-700",
+            borderBtn: "border-green-700",
+            textBtn: "text-green-700",
+            hoverBtn: "hover:bg-green-50",
+            glow: "bg-green-100/50",
+            calidadColor: "text-green-700"
         },
-        pure: {
-            title: "Puré de Mango",
-            video: "/mangopure.mp4", 
-            clasificacion: "Pulpa 100% Natural",
-            proceso: "Despulpado / Tamizado",
-            desc2: "Puré de mango de alta viscosidad y color brillante. Pasteurizado para mantener la seguridad alimentaria sin sacrificar el perfil aromático de la fruta fresca.",
+        maracuya: {
+            title: "Pulpa de Maracuyá",
+            video: "/maracuya.mp4",
+            clasificacion: "Passiflora Edulis",
+            proceso: "Extracción mecánica",
+            desc2: "Pulpa de maracuyá 100% pura, con o sin semilla. Aroma intenso y brix estandarizado para la industria de bebidas y concentrados de alta gama.",
+            colorBtn: "bg-yellow-600",
+            borderBtn: "border-yellow-600",
+            textBtn: "text-yellow-700",
+            hoverBtn: "hover:bg-yellow-50",
+            glow: "bg-yellow-100/50",
+            calidadColor: "text-yellow-700"
         },
     };
 
@@ -165,18 +174,23 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
     const specClas = document.getElementById("spec-clasificacion");
     const specProc = document.getElementById("spec-proceso");
     const desc2El = document.getElementById("desc-2");
+    const bgGlow = document.getElementById("bg-glow");
 
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
-            const type = btn.getAttribute("data-type") as "chunk" | "pure";
+            const type = btn.getAttribute("data-type") as "kiwi" | "maracuya";
             const info = productData[type];
 
             buttons.forEach((b) => {
-                b.classList.remove("bg-amber-600", "text-white", "shadow-md");
-                b.classList.add("border", "border-amber-600", "text-amber-600", "hover:bg-amber-50");
+                b.className = "tab-btn px-5 py-2 rounded-full text-sm font-medium transition-all";
+                if (b === btn) {
+                    b.classList.add(info.colorBtn, "text-white", "shadow-md");
+                } else {
+                    const otherType = b.getAttribute("data-type") as "kiwi" | "maracuya";
+                    const otherInfo = productData[otherType];
+                    b.classList.add("border", otherInfo.borderBtn, otherInfo.textBtn, otherInfo.hoverBtn);
+                }
             });
-            btn.classList.add("bg-amber-600", "text-white", "shadow-md");
-            btn.classList.remove("border", "border-amber-600", "text-amber-600", "hover:bg-amber-50");
 
             imgEl.classList.add("opacity-0");
             videoEl.classList.add("opacity-0");
@@ -196,6 +210,7 @@ const chunkImage = "https://global.vinfruits.com/wp-content/uploads/2024/09/IQF-
                     imgEl.classList.remove("opacity-0");
                 }
 
+                if (bgGlow) bgGlow.className = `absolute -inset-6 blur-3xl rounded-3xl opacity-40 group-hover:opacity-60 transition ${info.glow}`;
                 if (titleEl) titleEl.innerText = info.title;
                 if (specClas) specClas.innerText = info.clasificacion;
                 if (specProc) specProc.innerText = info.proceso;
