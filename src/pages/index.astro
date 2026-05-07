@@ -33,7 +33,10 @@ const fruits = [
 		<meta name="viewport" content="width=device-width" />
 		<title>Sano y Nutritivo Zamora | Frutas y Productos del Campo</title>
 		<link rel="icon" href="/snz2.ico" />
-		<meta name="google-site-verification" content="WFmqMszxb4OnPNz0WyLyd5nfs2ZN68Q9yiOe0BMQ6SY" />
+		<meta
+			name="google-site-verification"
+			content="WFmqMszxb4OnPNz0WyLyd5nfs2ZN68Q9yiOe0BMQ6SY"
+		/>
 	</head>
 
 	<body class="bg-gray-50 text-gray-800">
@@ -120,36 +123,53 @@ const fruits = [
 			</div>
 		</section>
 
-		<!-- FRUTAS / PRODUCTOS -->
-		<section class="py-28 px-6 bg-gradient-to-b from-white to-green-50">
+		<!-- FRUTAS / PRODUCTOS - ESTILO EDITORIAL -->
+		<section class="py-32 px-6 bg-white">
 			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-bold text-green-800">
-						Nuestras Frutas
-					</h2>
-					<p class="text-gray-500 mt-4">
-						Cultivadas con calidad y procesos naturales
+				<div
+					class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
+				>
+					<div class="max-w-2xl">
+						<span
+							class="text-green-600 font-bold tracking-widest uppercase text-xs"
+							>Selección Premium</span
+						>
+						<h2
+							class="text-5xl md:text-6xl font-light text-gray-900 mt-4 italic"
+						>
+							Nuestras <span
+								class="font-black not-italic text-green-800"
+								>Frutas</span
+							>
+						</h2>
+					</div>
+					<p
+						class="text-gray-400 max-w-xs text-sm uppercase tracking-tighter leading-tight"
+					>
+						Cultivadas bajo estándares internacionales de inocuidad
+						y frescura absoluta.
 					</p>
 				</div>
 
-				<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+				<div class="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
 					{
 						fruits.map((fruit) => (
-							<div class="group relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition duration-500">
-								<img
-									src={fruit.img}
-									alt={fruit.name}
-									class="h-80 w-full object-cover group-hover:scale-110 transition-transform duration-700"
-								/>
-								<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-								<div class="absolute bottom-0 p-6 text-white">
-									<h3 class="text-2xl font-bold mb-1">
-										{fruit.name}
-									</h3>
-									<p class="text-sm opacity-90">
-										{fruit.des}
-									</p>
+							<div class="group cursor-pointer">
+								<div class="relative overflow-hidden rounded-sm mb-6 aspect-[3/4]">
+									<img
+										src={fruit.img}
+										alt={fruit.name}
+										class="h-full w-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+									/>
+									<div class="absolute inset-0 border-[15px] border-white/0 group-hover:border-white/20 transition-all duration-700" />
 								</div>
+								<h3 class="text-xs font-bold tracking-[0.3em] uppercase text-gray-900 mb-2">
+									{fruit.name}
+								</h3>
+								<div class="h-px w-8 bg-green-500 mb-4 group-hover:w-16 transition-all duration-500" />
+								<p class="text-gray-500 text-sm leading-relaxed font-light">
+									{fruit.des}
+								</p>
 							</div>
 						))
 					}
@@ -157,219 +177,207 @@ const fruits = [
 			</div>
 		</section>
 
-		<!-- SOBRE NOSOTROS -->
-		<section
-			class="py-20 px-6 bg-gradient-to-b from-white via-green-50 to-white"
-		>
-			<div
-				class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center"
-			>
-				<!-- IMAGEN -->
-				<div class="relative group">
-					<div
-						class="absolute -inset-3 bg-green-200/20 blur-xl rounded-3xl group-hover:bg-green-300/30 transition"
-					>
+		<!-- SOBRE NOSOTROS - ESTILO MAGAZINE -->
+		<!-- SECCIÓN HISTORIA TIPO LAYERING -->
+		<section class="py-40 px-6 bg-white">
+			<div class="max-w-7xl mx-auto">
+				<div class="relative grid lg:grid-cols-12 items-center">
+					<!-- Imagen con marco asimétrico -->
+					<div class="lg:col-span-8 relative">
+						<div
+							class="absolute inset-0 bg-green-900/5 -translate-x-6 translate-y-6"
+						>
+						</div>
+						<img
+							src="sano.jpg"
+							class="relative w-full h-[700px] object-cover shadow-2xl"
+							alt="Campo"
+						/>
+						<!-- Badge flotante -->
+						<div
+							class="absolute top-10 left-10 bg-green-800 text-white p-6 rotate-90 origin-left tracking-[0.5em] text-[10px] uppercase font-bold"
+						>
+							Est. 2017 — Zamora, Mich.
+						</div>
 					</div>
 
-					<img
-						src="sano.jpg"
-						class="relative rounded-xl shadow-xl object-cover"
-						alt="Imagen de la empresa"
-					/>
-				</div>
-
-				<!-- TEXTO -->
-				<div>
-					<span
-						class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4"
+					<!-- Texto superpuesto -->
+					<div
+						class="lg:col-span-5 lg:absolute lg:right-0 bg-white p-12 lg:p-20 shadow-[50px_50px_100px_rgba(0,0,0,0.1)] mt-[-100px] lg:mt-0 z-20"
 					>
-						Sobre Nosotros
-					</span>
-
-					<h2
-						class="text-3xl md:text-4xl font-bold text-green-800 mb-4 leading-tight"
-					>
-						Nuestra Historia
-					</h2>
-
-					<p class="text-gray-600 leading-relaxed mb-8">
-						Somos una empresa familiar dedicada a la producción y
-						exportación de frutas frescas. Nuestro compromiso es
-						ofrecer alimentos saludables cultivados con procesos
-						responsables y respeto al medio ambiente.
-					</p>
-
-					<!-- STATS -->
-					<div class="grid grid-cols-3 gap-6 text-center">
-						<div>
-							<p class="text-2xl font-bold text-green-700">9+</p>
-							<p class="text-xs text-gray-500">Años</p>
-						</div>
-
-						<div>
-							<p class="text-2xl font-bold text-green-700">5+</p>
-							<p class="text-xs text-gray-500">Productos</p>
-						</div>
-
-						<div>
-							<p class="text-2xl font-bold text-green-700">3+</p>
-							<p class="text-xs text-gray-500">Mercados</p>
+						<h2
+							class="text-6xl font-black text-gray-900 leading-[0.9] mb-8"
+						>
+							RAÍCES <br />
+							<span
+								class="text-green-700 italic font-serif font-light text-5xl"
+								>que alimentan</span
+							>
+							<br /> EL MUNDO.
+						</h2>
+						<div class="w-20 h-1 bg-green-500 mb-8"></div>
+						<p
+							class="text-gray-600 text-xl font-light leading-relaxed italic"
+						>
+							"Empresa familiar líder en exportación, comprometida
+							con la calidad suprema,
+						</p>
+						<p
+							class="text-gray-600 text-xl font-light leading-relaxed italic"
+						>
+							 la salud y el respeto
+							absoluto al medio ambiente."
+						</p>
+						<div class="mt-12 flex gap-10">
+							<div>
+								<span
+									class="block text-4xl font-black text-gray-900"
+									>9+</span
+								>
+								<span
+									class="text-[10px] uppercase tracking-widest font-bold text-green-600"
+									>Años de Legado</span
+								>
+							</div>
+							<div>
+								<span
+									class="block text-4xl font-black text-gray-900"
+									>3</span
+								>
+								<span
+									class="text-[10px] uppercase tracking-widest font-bold text-green-600"
+									>Continentes</span
+								>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- MISION / VISION / VALORES -->
-		<section
-			class="py-28 px-6 bg-gradient-to-br from-green-50 via-white to-green-100"
-		>
-			<div class="max-w-7xl mx-auto">
-				<h2
-					class="text-center text-4xl md:text-5xl font-bold text-green-800 mb-20"
-				>
-					Nuestra Filosofía
-				</h2>
 
-				<div class="grid gap-10 md:grid-cols-3">
+		<!-- FILOSOFÍA - CLEAN GLASS -->
+		<section class="py-32 px-6 bg-white overflow-hidden">
+			<div class="max-w-7xl mx-auto relative">
+				<div
+					class="grid gap-px bg-gray-100 border border-gray-100 md:grid-cols-3"
+				>
 					<div
-						class="backdrop-blur-lg bg-white/60 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 transition"
+						class="bg-white p-16 hover:bg-green-50 transition-colors duration-700"
 					>
-						<div class="text-4xl mb-6">🎯</div>
-						<h3 class="text-xl font-semibold text-green-700 mb-4">
+						<span
+							class="text-4xl block mb-8 grayscale hover:grayscale-0 transition"
+							>🎯</span
+						>
+						<h3
+							class="text-xs font-bold tracking-[0.4em] uppercase text-green-800 mb-6"
+						>
 							Misión
 						</h3>
-						<p class="text-gray-700 text-sm leading-relaxed">
-							Ofrecer a nuestros clientes frutas y verduras
-							congeladas asegurando altos estándares de calidad e
-							inocuidad, manteniendo nuestros valores.
+						<p
+							class="text-gray-500 text-sm leading-7 font-light uppercase"
+						>
+							Asegurar altos estándares de calidad e inocuidad en
+							cada fruto procesado.
 						</p>
 					</div>
 
 					<div
-						class="backdrop-blur-lg bg-white/60 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 transition"
+						class="bg-white p-16 hover:bg-green-50 transition-colors duration-700"
 					>
-						<div class="text-4xl mb-6">🌎</div>
-						<h3 class="text-xl font-semibold text-green-700 mb-4">
+						<span
+							class="text-4xl block mb-8 grayscale hover:grayscale-0 transition"
+							>🌎</span
+						>
+						<h3
+							class="text-xs font-bold tracking-[0.4em] uppercase text-green-800 mb-6"
+						>
 							Visión
 						</h3>
-						<p class="text-gray-700 text-sm leading-relaxed">
-							Ser una empresa reconocida internacionalmente por la
-							calidad y manejo de nuestros productos
-							agroalimentarios.
+						<p
+							class="text-gray-500 text-sm leading-7 font-light uppercase"
+						>
+							Ser referentes internacionales en el manejo de
+							productos agroalimentarios.
 						</p>
 					</div>
 
 					<div
-						class="backdrop-blur-lg bg-white/60 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 transition"
+						class="bg-white p-16 hover:bg-green-50 transition-colors duration-700"
 					>
-						<div class="text-4xl mb-6">🤝</div>
-						<h3 class="text-xl font-semibold text-green-700 mb-4">
+						<span
+							class="text-4xl block mb-8 grayscale hover:grayscale-0 transition"
+							>🤝</span
+						>
+						<h3
+							class="text-xs font-bold tracking-[0.4em] uppercase text-green-800 mb-6"
+						>
 							Valores
 						</h3>
-						<ul class="text-gray-700 text-sm space-y-2">
-							<li>• Competitividad</li>
-							<li>• Responsabilidad</li>
-							<li>• Iniciativa</li>
-							<li>• Confianza</li>
-							<li>• Pasión</li>
+						<ul
+							class="text-[11px] font-bold uppercase tracking-[0.2em] space-y-4 text-gray-400"
+						>
+							<li class="flex items-center gap-4">
+								<span class="w-2 h-2 bg-green-500 rounded-full"
+								></span> Competitividad
+							</li>
+							<li class="flex items-center gap-4">
+								<span class="w-2 h-2 bg-green-500 rounded-full"
+								></span> Responsabilidad
+							</li>
+							<li class="flex items-center gap-4">
+								<span class="w-2 h-2 bg-green-500 rounded-full"
+								></span> Pasión
+							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- PROCESO -->
-		<section class="py-28 px-6 bg-white">
-			<div class="max-w-6xl mx-auto text-center">
-				<h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-20">
-					Nuestro Proceso
-				</h2>
-
-				<div class="relative">
-					<div
-						class="hidden md:block absolute top-10 left-0 right-0 h-1 bg-green-200"
-					>
-					</div>
-					<div class="grid md:grid-cols-4 gap-12">
-						<div class="relative">
-							<div
-								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
-							>
-								🌱
-							</div>
-							<h3 class="font-semibold mb-2">Cultivo</h3>
-							<p class="text-sm text-gray-600">
-								Semillas seleccionadas y técnicas sostenibles.
-							</p>
-						</div>
-
-						<div class="relative">
-							<div
-								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
-							>
-								🍃
-							</div>
-							<h3 class="font-semibold mb-2">Cosecha</h3>
-							<p class="text-sm text-gray-600">
-								Recolectamos cada fruta en su punto perfecto.
-							</p>
-						</div>
-
-						<div class="relative">
-							<div
-								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
-							>
-								📦
-							</div>
-							<h3 class="font-semibold mb-2">Empaque</h3>
-							<p class="text-sm text-gray-600">
-								Clasificación y empaque para mantener frescura.
-							</p>
-						</div>
-
-						<div class="relative">
-							<div
-								class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-300 text-white text-2xl shadow-lg mb-6"
-							>
-								🚚
-							</div>
-							<h3 class="font-semibold mb-2">Distribución</h3>
-							<p class="text-sm text-gray-600">
-								Llevamos fruta fresca a mercados
-								internacionales.
-							</p>
-						</div>
-					</div>
-				</div>
+		<!-- CTA FINAL - MINIMALISMO ABSOLUTO -->
+		<section
+			class="py-40 px-6 bg-green-900 text-white relative overflow-hidden"
+		>
+			<div class="absolute inset-0 opacity-20">
+				<img
+					src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
+					class="w-full h-full object-cover"
+				/>
 			</div>
-		</section>
-
-		<!-- CTA FINAL MINIMAL -->
-		<section class="py-32 px-6">
-			<div class="max-w-3xl mx-auto text-center">
+			<div class="max-w-4xl mx-auto text-center relative z-10">
 				<h2
-					class="text-4xl md:text-5xl font-semibold text-gray-900 mb-6"
+					class="text-5xl md:text-7xl font-light mb-12 leading-tight italic"
 				>
-					Trabajemos juntos
+					Lleve la frescura de <br />
+					<span class="font-black not-italic"
+						>Zamora a su Negocio.</span
+					>
 				</h2>
-
-				<p class="text-lg text-gray-500 mb-10">
-					Si buscas frutas frescas para tu negocio o distribución,
-					podemos ayudarte a llevar productos de calidad a tu mercado.
-				</p>
-
 				<a
 					href="/contactanos"
-					class="inline-flex items-center gap-2 text-green-700 font-semibold text-lg
-		border-b-2 border-green-600 pb-1
-		hover:border-green-800 hover:text-green-800
-		transition-all duration-300"
+					class="group relative inline-flex items-center gap-8 px-12 py-6 border border-white/30 hover:border-white transition-all duration-500 overflow-hidden"
 				>
-					Contactar
-					<span>→</span>
+					<span
+						class="relative z-10 font-bold tracking-[0.3em] uppercase text-sm"
+						>Iniciar Alianza</span
+					>
+					<span
+						class="relative z-10 transition-transform group-hover:translate-x-2"
+						>→</span
+					>
+					<div
+						class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+					>
+					</div>
+					<span
+						class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 text-green-900 font-bold tracking-[0.3em] uppercase text-sm transition-opacity duration-500 z-20"
+					>
+						Iniciar Alianza
+					</span>
 				</a>
 			</div>
 		</section>
+
 		<!-- FOOTER -->
 		<Footer />
 	</body>
